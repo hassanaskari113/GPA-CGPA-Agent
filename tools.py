@@ -200,7 +200,7 @@ def get_remaining_credit_hours(current_semester: int) -> float:
         for course in course_list:
             remaining_ch += course[2]
 
-    return remaining_ch
+    return round(remaining_ch, 2)
 
 
 def save_report(filename: str, content: str) -> str:
