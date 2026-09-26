@@ -119,7 +119,7 @@ def calculate_semester_gpa(
     total_ch = sum(credit_hours)
     temp_gpa = sum(i * j for i, j in zip(grade_points, credit_hours))
     final_gpa = temp_gpa / total_ch
-    return final_gpa
+    return round(final_gpa, 2)
 
 
 def calculate_new_cgpa(
@@ -140,7 +140,7 @@ def calculate_new_cgpa(
         current_cgpa * completed_credit_hours + semester_gpa * semester_credit_hours
     ) / (completed_credit_hours + semester_credit_hours)
 
-    return new_cgpa
+    return round(new_cgpa, 2)
 
 
 def required_gpa_for_target(
@@ -165,7 +165,7 @@ def required_gpa_for_target(
         - current_cgpa * completed_credit_hours
     ) / remaining_credit_hours
 
-    return required_gpa
+    return round(required_gpa, 2)
 
 
 def get_semester_courses(semester: int) -> str:
